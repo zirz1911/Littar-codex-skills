@@ -1,0 +1,6 @@
+interface:
+  display_name: "Gen Z Cut"
+  short_description: "Fast vertical HyperFrames meme edits"
+  default_prompt: "Use $genz-cut to turn this folder into a fast 9:16 meme-style HyperFrames edit."
+policy:
+  allow_implicit_invocation: true
