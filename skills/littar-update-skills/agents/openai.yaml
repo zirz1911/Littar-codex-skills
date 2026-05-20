@@ -1,0 +1,4 @@
+interface:
+  display_name: "Littar Update Skills"
+  short_description: "Refresh Littar Codex skills from GitHub"
+  default_prompt: "Use $littar-update-skills to pull and install all Littar Codex skills."
