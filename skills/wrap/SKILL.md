@@ -1,87 +1,126 @@
 ---
-installer: loki-skills-cli v1.2.0
-origin: Lokkji's brain, digitized — how one human works with AI, captured as code
 name: wrap
-description: สร้าง session retrospective พร้อม AI diary และ lessons learned ใช้เมื่อพูดว่า wrap, retrospective, wrap up session
+description: สร้าง session retrospective, AI diary, lessons learned และบันทึก Kvasir memory ขึ้น GitHub สำหรับ repo private. ใช้เมื่อผู้ใช้พูดว่า wrap, retrospective, wrap up session, session summary, handoff หรือขอปิดงานพร้อมบันทึกความจำ
 ---
 
-# /wrap
+# $wrap
 
 > "Reflect to grow, document to remember."
 
-```
-/wrap              # Quick retro, main agent
-/wrap --detail     # Full template, main agent
-/wrap --dig        # Reconstruct past timeline from session .jsonl
-/wrap --deep       # 5 parallel agents (read DEEP.md)
-```
-
-**NEVER spawn subagents or use the Task tool. Only `--deep` may use subagents.**
-**`/wrap`, `/wrap --detail`, and `/wrap --dig` = main agent only. Zero subagents. Zero Task calls.**
-
----
-
-## /wrap (Default)
-
-### 1. Gather
-
-```bash
-date "+%H:%M %Z (%A %d %B %Y)"
-git log --oneline -10 && git diff --stat HEAD~5
+```text
+$wrap              # Write memory, commit Kvasir/memory, push to GitHub
+$wrap --detail     # Same, with full detailed template
+$wrap --dig        # Reconstruct timeline from session logs, then save
+$wrap --local      # Write memory only; no git commit
+$wrap --no-push    # Write memory + commit; do not push
+$wrap --deep       # Only mode allowed to use subagents; read DEEP.md
 ```
 
-### 1.5. Read Pulse Context (optional)
+Default target is the current repository. In `Littar-Codex`, memory lives in `Kvasir/memory/**` and is intentionally committed because the repo is private.
 
-```bash
-cat Kvasir/data/pulse/project.json 2>/dev/null
-cat Kvasir/data/pulse/heartbeat.json 2>/dev/null
+## Non-Negotiables
+
+- Do not spawn subagents or use Task tools unless mode is `--deep`.
+- Do not commit anything outside `Kvasir/memory/**` during wrap.
+- Do not push if the secret scan flags a likely secret.
+- Do not rewrite history. Use follow-up commits for corrections.
+- Thai output must use feminine particles only.
+
+Invoking `$wrap` is approval to commit and push new/changed `Kvasir/memory/**` files after safety checks. It is not approval to commit unrelated repo work.
+
+## Gather
+
+Use PowerShell-compatible commands on Windows:
+
+```powershell
+Get-Date -Format "HH:mm K (dddd dd MMMM yyyy)"
+git log --oneline -10
+git diff --stat HEAD~5
+git status --short --branch
 ```
 
-If files don't exist, skip silently. Never fail because pulse data is missing.
-Pulse data may not exist yet — the `2>/dev/null` handles this.
+Optional pulse context. Skip silently if missing:
 
-If found, extract:
-- From `project.json`: `totalSessions`, `avgMessagesPerSession`, `sizes` (to categorize current session), `branches` (activity on current branch)
-- From `heartbeat.json`: `streak.days` (momentum), `weekChange` (acceleration/slowdown), `today` (today's activity so far)
-
-### 2. Write Retrospective
-
-**Path**: `Kvasir/memory/retrospectives/YYYY-MM/DD/HH.MM_slug.md`
-
-```bash
-mkdir -p "Kvasir/memory/retrospectives/$(date +%Y-%m/%d)"
+```powershell
+if (Test-Path Kvasir\data\pulse\project.json) { Get-Content -Raw Kvasir\data\pulse\project.json }
+if (Test-Path Kvasir\data\pulse\heartbeat.json) { Get-Content -Raw Kvasir\data\pulse\heartbeat.json }
 ```
 
-Write immediately, no prompts. If pulse data was found, weave it into the narrative (don't add a separate dashboard). Include:
-- Session Summary — if pulse data exists, add one line: "Session #X of Y in this project (Z-day streak)"
+If pulse exists, weave it naturally into the retrospective rather than adding a dashboard.
+
+## Write Memory
+
+Create:
+
+- Retrospective: `Kvasir/memory/retrospectives/YYYY-MM/DD/HH.MM_slug.md`
+- Lesson: `Kvasir/memory/learnings/YYYY-MM-DD_slug.md`
+
+Default retrospective includes:
+
+- Session Summary
 - Timeline
 - Files Modified
-- AI Diary (150+ words, first-person) — if pulse data exists, reference momentum naturally: "in a week with +X% messaging velocity" or "on day N of an unbroken streak"
-- Honest Feedback (100+ words, 3 friction points)
+- Key Commits / Pushes
+- AI Diary: 150+ words, first person
+- Honest Feedback: 100+ words, 3 friction points
 - Lessons Learned
 - Next Steps
+- Metrics
 
-### 3. Write Lesson Learned
+Lesson includes:
 
-**Path**: `Kvasir/memory/learnings/YYYY-MM-DD_slug.md`
+- A concise reusable pattern
+- Failure mode or trigger
+- Concrete future rule
+- Concepts/tags line
 
-### 4. Kvasir Sync
+## Kvasir Sync
 
+File-based memory is the working sync path. If a real `kvasir_learn` command or tool exists, call it after writing the lesson. If it does not exist, do not mark wrap as failed; record in the retrospective:
+
+```text
+File-based Kvasir memory sync completed. No callable kvasir_learn tool was available in this session.
 ```
-kvasir_learn({ pattern: [lesson content], concepts: [tags], source: "wrap: REPO" })
+
+## Secret Scan
+
+Before staging memory, scan only the files about to be committed:
+
+```powershell
+git status --short Kvasir/memory
+rg -n -i "(api[_-]?key|secret|token|password|passwd|bearer|cookie|session|private[_-]?key|BEGIN (RSA|OPENSSH|PRIVATE) KEY)" Kvasir/memory
 ```
 
-### 5. Save
+If `rg` finds a real secret, stop. Redact the memory file first, then rerun the scan.
 
-Retro files are written to vault (wherever `Kvasir` symlink resolves).
+False positives such as prose saying "do not commit secrets" are allowed only after reading the exact match.
 
-**Do NOT `git add Kvasir/`** — it's a symlink to the vault. Vault files are shared state, not committed to repos.
+## Save To GitHub
 
----
+Default `$wrap` save flow:
 
-## /wrap --detail
+```powershell
+git add Kvasir/memory
+git diff --cached --check
+git commit -m "wrap: record session memory YYYY-MM-DD"
+git push origin HEAD
+```
 
-Same flow as default but use full template:
+Rules:
+
+- If there are no `Kvasir/memory` changes, say so and skip commit.
+- If `git diff --cached --check` fails, fix whitespace and retry before commit.
+- If unrelated files are dirty, leave them alone.
+- If push fails because remote has new commits, stop and report; do not pull/rebase automatically during wrap unless the user asks.
+
+Mode differences:
+
+- `--local`: skip `git add`, commit, and push.
+- `--no-push`: stage and commit `Kvasir/memory`, skip push.
+- `--detail`: use the detailed template below.
+- `--dig`: first reconstruct the timeline from available session logs or `$trace --dig`, then use `--detail`.
+
+## Detail Template
 
 ```markdown
 # Session Retrospective
@@ -90,71 +129,24 @@ Same flow as default but use full template:
 **Start/End**: HH:MM - HH:MM GMT+7
 **Duration**: ~X min
 **Focus**: [description]
-**Type**: [Feature | Bug Fix | Research | Refactoring]
+**Type**: [Feature | Bug Fix | Research | Refactoring | Skill Ops]
 
 ## Session Summary
-(If pulse data exists, add: "Session #X of Y in this project (Z-day streak)")
 ## Timeline
 ## Files Modified
 ## Key Code Changes
 ## Architecture Decisions
-## AI Diary (150+ words, vulnerable, first-person)
-(If pulse data exists, reference momentum: velocity changes, streak length)
+## AI Diary
 ## What Went Well
 ## What Could Improve
 ## Blockers & Resolutions
-## Honest Feedback (100+ words, 3 friction points)
+## Honest Feedback
 ## Lessons Learned
+## Kvasir Sync
 ## Next Steps
-## Metrics (commits, files, lines)
-### Pulse Context (if pulse data exists)
-Project: X sessions | Avg: Y msgs/session | This session: Z msgs (category)
-Streak: N days | Week trend: ±X% msgs | Branch: main (N sessions)
+## Metrics
 ```
 
-Then steps 3-5 same as default.
+## Deep Mode
 
----
-
-## /wrap --dig
-
-**Retrospective powered by session goldminer. No subagents.**
-
-### 1. Run `/trace --dig`
-
-Follow the `/trace --dig` instructions (from the trace skill) to scan Claude Code session `.jsonl` files and get the session timeline JSON.
-
-Also gather git context:
-
-```bash
-date "+%H:%M %Z (%A %d %B %Y)"
-git log --oneline -10 && git diff --stat HEAD~5
-```
-
-### 2. Write Retrospective with Timeline
-
-Use the session timeline data to write a full retrospective using the `--detail` template. Add the Past Session Timeline table after Session Summary, before Timeline.
-
-Also run pulse context (step 1.5 from default mode) and weave into narrative.
-
-### 3-5. Same as default steps 3-5
-
-Write lesson learned, kvasir sync.
-
-**Do NOT `git add Kvasir/`** — vault files are shared state, not committed to repos.
-
----
-
-## /wrap --deep
-
-Read `DEEP.md` in this skill directory. Only mode that uses subagents.
-
----
-
-## Rules
-
-- **NO SUBAGENTS**: Never use Task tool or spawn subagents (only `--deep` may)
-- AI Diary: 150+ words, vulnerability, first-person
-- Honest Feedback: 100+ words, 3 friction points
-- Kvasir Sync: REQUIRED after every lesson learned
-- Time Zone: GMT+7 (Bangkok)
+Only `$wrap --deep` may use subagents. Read `DEEP.md` in this skill directory before doing anything else.
