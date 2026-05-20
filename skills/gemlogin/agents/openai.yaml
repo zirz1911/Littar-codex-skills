@@ -1,5 +1,4 @@
-interface:
+﻿interface:
   display_name: "Gemlogin"
   short_description: "Run and use the GemLogin MCP server"
   default_prompt: "Use $gemlogin to connect GemLogin profiles through the local MCP server."
-
