@@ -28,12 +28,24 @@ Default target is the current repository. In `Littar-Codex`, memory lives in `Kv
 
 Invoking `$wrap` is approval to commit and push new/changed `Kvasir/memory/**` files after safety checks. It is not approval to commit unrelated repo work.
 
+## Cross-Platform Rule
+
+This skill must work on both Windows and Linux.
+
+- Prefer commands that work everywhere: `git`, `python`, `rg`.
+- Use `python` for dates, path creation, and file operations when shell syntax would differ.
+- Use PowerShell snippets only when the active shell is PowerShell.
+- Use Bash snippets only when the active shell is Bash/Zsh.
+- If both options are shown, run only the one matching the current shell.
+- Do not use Bash-only syntax such as `$(date ...)`, `mkdir -p`, or `2>/dev/null` in PowerShell.
+- Do not use PowerShell-only syntax such as `Test-Path` or `Get-Content` in Bash.
+
 ## Gather
 
-Use PowerShell-compatible commands on Windows:
+Portable commands:
 
-```powershell
-Get-Date -Format "HH:mm K (dddd dd MMMM yyyy)"
+```bash
+python -c "from datetime import datetime, timezone, timedelta; print(datetime.now(timezone(timedelta(hours=7))).strftime('%H:%M GMT+7 (%A %d %B %Y)'))"
 git log --oneline -10
 git diff --stat HEAD~5
 git status --short --branch
@@ -41,9 +53,18 @@ git status --short --branch
 
 Optional pulse context. Skip silently if missing:
 
+PowerShell:
+
 ```powershell
 if (Test-Path Kvasir\data\pulse\project.json) { Get-Content -Raw Kvasir\data\pulse\project.json }
 if (Test-Path Kvasir\data\pulse\heartbeat.json) { Get-Content -Raw Kvasir\data\pulse\heartbeat.json }
+```
+
+Bash/Zsh:
+
+```bash
+test -f Kvasir/data/pulse/project.json && cat Kvasir/data/pulse/project.json
+test -f Kvasir/data/pulse/heartbeat.json && cat Kvasir/data/pulse/heartbeat.json
 ```
 
 If pulse exists, weave it naturally into the retrospective rather than adding a dashboard.
@@ -54,6 +75,12 @@ Create:
 
 - Retrospective: `Kvasir/memory/retrospectives/YYYY-MM/DD/HH.MM_slug.md`
 - Lesson: `Kvasir/memory/learnings/YYYY-MM-DD_slug.md`
+
+Create directories portably:
+
+```bash
+python -c "from pathlib import Path; from datetime import datetime, timezone, timedelta; now=datetime.now(timezone(timedelta(hours=7))); Path(f'Kvasir/memory/retrospectives/{now:%Y-%m}/{now:%d}').mkdir(parents=True, exist_ok=True); Path('Kvasir/memory/learnings').mkdir(parents=True, exist_ok=True)"
+```
 
 Default retrospective includes:
 
@@ -86,7 +113,7 @@ File-based Kvasir memory sync completed. No callable kvasir_learn tool was avail
 
 Before staging memory, scan only the files about to be committed:
 
-```powershell
+```bash
 git status --short Kvasir/memory
 rg -n -i "(api[_-]?key|secret|token|password|passwd|bearer|cookie|session|private[_-]?key|BEGIN (RSA|OPENSSH|PRIVATE) KEY)" Kvasir/memory
 ```
@@ -99,7 +126,7 @@ False positives such as prose saying "do not commit secrets" are allowed only af
 
 Default `$wrap` save flow:
 
-```powershell
+```bash
 git add Kvasir/memory
 git diff --cached --check
 git commit -m "wrap: record session memory YYYY-MM-DD"
