@@ -1,101 +1,353 @@
-{
-  "version": 1,
-  "skills": {
-    "animejs": {
-      "source": "heygen-com/hyperframes",
-      "sourceType": "github",
-      "skillPath": "skills/animejs/SKILL.md",
-      "computedHash": "314c655fbc0df7eacc6f3853435ff8b03c2a771fad7435a58e2c4489a780d1b7"
-    },
-    "contribute-catalog": {
-      "source": "heygen-com/hyperframes",
-      "sourceType": "github",
-      "skillPath": "skills/contribute-catalog/SKILL.md",
-      "computedHash": "31733d362afeb07d5716e267cf94ae487740c3e52f5e60ad714e085c95a03b73"
-    },
-    "css-animations": {
-      "source": "heygen-com/hyperframes",
-      "sourceType": "github",
-      "skillPath": "skills/css-animations/SKILL.md",
-      "computedHash": "df468749b06a8ec7369cfea69bf71bf65e46cfc376e837e439e26f4230852c6b"
-    },
-    "genz-cut": {
-      "source": "local",
-      "sourceType": "local",
-      "skillPath": "skills/genz-cut/SKILL.md",
-      "computedHash": "b4bc87fd46ec4c66815e07f7cf79d8ab596c5a5be4b6c561f77b1d6f981d40a4"
-    },
-    "gsap": {
-      "source": "heygen-com/hyperframes",
-      "sourceType": "github",
-      "skillPath": "skills/gsap/SKILL.md",
-      "computedHash": "ef2658b3705d3fd5c8e38d197b31521553a0bee3b40bda2ab70bf22bd6b88854"
-    },
-    "hyperframes": {
-      "source": "heygen-com/hyperframes",
-      "sourceType": "github",
-      "skillPath": "skills/hyperframes/SKILL.md",
-      "computedHash": "f726a7478c7a3133e763c9af5f8ade12bc65dbdf32f09a854696ebabc68433a5"
-    },
-    "hyperframes-cli": {
-      "source": "heygen-com/hyperframes",
-      "sourceType": "github",
-      "skillPath": "skills/hyperframes-cli/SKILL.md",
-      "computedHash": "59dcf8d01b5e21a101d6c1225411b487316436221170e7e1dc9b00bf5c27d359"
-    },
-    "hyperframes-media": {
-      "source": "heygen-com/hyperframes",
-      "sourceType": "github",
-      "skillPath": "skills/hyperframes-media/SKILL.md",
-      "computedHash": "4dbba9f98b1d354f8b788c290cfab34f1e000d803cca40808da1a69973231dde"
-    },
-    "hyperframes-registry": {
-      "source": "heygen-com/hyperframes",
-      "sourceType": "github",
-      "skillPath": "skills/hyperframes-registry/SKILL.md",
-      "computedHash": "cd10f258cea41d3dcfe914cb1c93fc999cd9361c64a517ffe9389d42bbf89b62"
-    },
-    "lottie": {
-      "source": "heygen-com/hyperframes",
-      "sourceType": "github",
-      "skillPath": "skills/lottie/SKILL.md",
-      "computedHash": "42174a1de29225618166626ed113bfd311a6b53083ddd514ab50991816f77b19"
-    },
-    "remotion-to-hyperframes": {
-      "source": "heygen-com/hyperframes",
-      "sourceType": "github",
-      "skillPath": "skills/remotion-to-hyperframes/SKILL.md",
-      "computedHash": "ee04c5eca6113d5a3a8aeee9e78792451da57f06450bd034486950142ee05766"
-    },
-    "tailwind": {
-      "source": "heygen-com/hyperframes",
-      "sourceType": "github",
-      "skillPath": "skills/tailwind/SKILL.md",
-      "computedHash": "97bf0007f24e6275dcabc084c4d42f434ba48a84cec5a5b060036220239d6ddc"
-    },
-    "three": {
-      "source": "heygen-com/hyperframes",
-      "sourceType": "github",
-      "skillPath": "skills/three/SKILL.md",
-      "computedHash": "d40f783d8687f93b19657c193811c78304f84dd276ad344c38045e57b03de187"
-    },
-    "typegpu": {
-      "source": "heygen-com/hyperframes",
-      "sourceType": "github",
-      "skillPath": "skills/typegpu/SKILL.md",
-      "computedHash": "768a9b983ac79fc283307cdd39f262ab4da5deeb3726ec65252fb7b4bc04f779"
-    },
-    "waapi": {
-      "source": "heygen-com/hyperframes",
-      "sourceType": "github",
-      "skillPath": "skills/waapi/SKILL.md",
-      "computedHash": "a497e9e3f2ffc5a4c38cbfdd86ff60a23a872173cff0df9489ffa10c3d256744"
-    },
-    "website-to-hyperframes": {
-      "source": "heygen-com/hyperframes",
-      "sourceType": "github",
-      "skillPath": "skills/website-to-hyperframes/SKILL.md",
-      "computedHash": "4d6f7ea7c0fabd0e7572d26f85fcf83974ac75b19ec1e49529a4e01115302ab4"
-    }
-  }
+﻿{
+    "version":  1,
+    "skills":  {
+                   "about-kvasir":  {
+                                        "source":  "local-codex-skills",
+                                        "sourceType":  "local",
+                                        "skillPath":  "skills/about-kvasir/SKILL.md",
+                                        "computedHash":  "94ef2648f6fa6492bcc1ee9052d44522f4ce319ceefb29c518b2ea8b294fe413"
+                                    },
+                   "animejs":  {
+                                   "source":  "local-codex-skills",
+                                   "sourceType":  "local",
+                                   "skillPath":  "skills/animejs/SKILL.md",
+                                   "computedHash":  "a1e478999629251d4627c2840d0f56a047667536429ed5209bd4c052d7339c28"
+                               },
+                   "awaken":  {
+                                  "source":  "local-codex-skills",
+                                  "sourceType":  "local",
+                                  "skillPath":  "skills/awaken/SKILL.md",
+                                  "computedHash":  "9f1768abfc997f0e284d10887f4451509faae736a726078de920088c78835117"
+                              },
+                   "birth":  {
+                                 "source":  "local-codex-skills",
+                                 "sourceType":  "local",
+                                 "skillPath":  "skills/birth/SKILL.md",
+                                 "computedHash":  "f7b3e20d227084f906f9e05910c2df3a74c8813d091291ff30b6c6a3cb62b712"
+                             },
+                   "contribute-catalog":  {
+                                              "source":  "local-codex-skills",
+                                              "sourceType":  "local",
+                                              "skillPath":  "skills/contribute-catalog/SKILL.md",
+                                              "computedHash":  "02d82d65e2703f00681ff0f407c3603fd6bca58e9618a4b74ee18bca9c33d209"
+                                          },
+                   "css-animations":  {
+                                          "source":  "local-codex-skills",
+                                          "sourceType":  "local",
+                                          "skillPath":  "skills/css-animations/SKILL.md",
+                                          "computedHash":  "26d4737deea6e8ef67552db2654924437e21644da52b1dd51a784dab6a7dfb6a"
+                                      },
+                   "cut":  {
+                               "source":  "local-codex-skills",
+                               "sourceType":  "local",
+                               "skillPath":  "skills/cut/SKILL.md",
+                               "computedHash":  "768136a2557933507a97a45842ecc0fb1a2fbf699bb0003c6888d8a419b378e0"
+                           },
+                   "cut-silence":  {
+                                       "source":  "local-codex-skills",
+                                       "sourceType":  "local",
+                                       "skillPath":  "skills/cut-silence/SKILL.md",
+                                       "computedHash":  "2b29238e5f63a97337278c2eb00de5260c4421001f128e646d8f1bcd37a9f5be"
+                                   },
+                   "cut-slence":  {
+                                      "source":  "local-codex-skills",
+                                      "sourceType":  "local",
+                                      "skillPath":  "skills/cut-slence/SKILL.md",
+                                      "computedHash":  "01f42f9725293dae10aae7ad93fd691de78a31fbacb6e63424ab6a56772e970d"
+                                  },
+                   "debug-mantra":  {
+                                        "source":  "local-codex-skills",
+                                        "sourceType":  "local",
+                                        "skillPath":  "skills/debug-mantra/SKILL.md",
+                                        "computedHash":  "a8c3dafdc0709c21fcaec9b33c5924bf289b72ff4b731ed6f6b8ed71f1e30d9d"
+                                    },
+                   "deep-research":  {
+                                         "source":  "local-codex-skills",
+                                         "sourceType":  "local",
+                                         "skillPath":  "skills/deep-research/SKILL.md",
+                                         "computedHash":  "ee9519d3a656e79d0310d8da94f1fbb2bc0005cefbe34a02910731dc806624ea"
+                                     },
+                   "dig":  {
+                               "source":  "local-codex-skills",
+                               "sourceType":  "local",
+                               "skillPath":  "skills/dig/SKILL.md",
+                               "computedHash":  "354509c9281575e5507938d8686b9352790cd37e8dbd483ad80e3cd1534f65e1"
+                           },
+                   "feel":  {
+                                "source":  "local-codex-skills",
+                                "sourceType":  "local",
+                                "skillPath":  "skills/feel/SKILL.md",
+                                "computedHash":  "97e210ab70e63cb40626c28d18bf5be0721bf35d913cb5ff5c5d10f1d116d696"
+                            },
+                   "forward":  {
+                                   "source":  "local-codex-skills",
+                                   "sourceType":  "local",
+                                   "skillPath":  "skills/forward/SKILL.md",
+                                   "computedHash":  "ea6c396117f6f612fb07992e53248f8fbe9048edba159a23bb428677a5fcf634"
+                               },
+                   "fyi":  {
+                               "source":  "local-codex-skills",
+                               "sourceType":  "local",
+                               "skillPath":  "skills/fyi/SKILL.md",
+                               "computedHash":  "d7a4d32cfc98cacb254ab1f05083cca1d085845bfc0c58fdfb1de50cbffe72fb"
+                           },
+                   "gemini":  {
+                                  "source":  "local-codex-skills",
+                                  "sourceType":  "local",
+                                  "skillPath":  "skills/gemini/SKILL.md",
+                                  "computedHash":  "ff37a1eaa3b0c69b53ecbdd4ad8d444043d6dedfe94ae7b326aecc07a85016a1"
+                              },
+                   "genz-cut":  {
+                                    "source":  "local-codex-skills",
+                                    "sourceType":  "local",
+                                    "skillPath":  "skills/genz-cut/SKILL.md",
+                                    "computedHash":  "8f160cb8bb6eac8954d44a89d680e9bd6c9dbce09d577b02edab3f403b96925a"
+                                },
+                   "gsap":  {
+                                "source":  "local-codex-skills",
+                                "sourceType":  "local",
+                                "skillPath":  "skills/gsap/SKILL.md",
+                                "computedHash":  "8ba255c3949663b4f49aa6ce5ad7d9af743b362dd53aa729a9a2d7187932edd6"
+                            },
+                   "hyperframes":  {
+                                       "source":  "local-codex-skills",
+                                       "sourceType":  "local",
+                                       "skillPath":  "skills/hyperframes/SKILL.md",
+                                       "computedHash":  "77baab5135dcbcf5ac1262c5fc95e94c0c546d8e92f20e87b2537a9ee81c8a56"
+                                   },
+                   "hyperframes-cli":  {
+                                           "source":  "local-codex-skills",
+                                           "sourceType":  "local",
+                                           "skillPath":  "skills/hyperframes-cli/SKILL.md",
+                                           "computedHash":  "12bd740adad5ab635b18ac7c6ce40fb99a03fa7cb8618d9f2c5c6e417123a908"
+                                       },
+                   "hyperframes-media":  {
+                                             "source":  "local-codex-skills",
+                                             "sourceType":  "local",
+                                             "skillPath":  "skills/hyperframes-media/SKILL.md",
+                                             "computedHash":  "ae2c020c6df4e1a7b9305b361b858f2310d899e9e25b8a392282686ec17e5477"
+                                         },
+                   "hyperframes-registry":  {
+                                                "source":  "local-codex-skills",
+                                                "sourceType":  "local",
+                                                "skillPath":  "skills/hyperframes-registry/SKILL.md",
+                                                "computedHash":  "ef5008899d6154938f05384e4a51231cf1c20be02494e0c85538c4457fc5829b"
+                                            },
+                   "kvasir":  {
+                                  "source":  "local-codex-skills",
+                                  "sourceType":  "local",
+                                  "skillPath":  "skills/kvasir/SKILL.md",
+                                  "computedHash":  "b54389a95e21566498db7bdfb0d837f05acdb3805699a3d10c8d8d1de6ea5b1a"
+                              },
+                   "kvasir-family-scan":  {
+                                              "source":  "local-codex-skills",
+                                              "sourceType":  "local",
+                                              "skillPath":  "skills/kvasir-family-scan/SKILL.md",
+                                              "computedHash":  "6d6a2da3d6317ed5ec3a764bb5c27b3f8a4fe1a006f139a8a8797070ecf18d8a"
+                                          },
+                   "kvasirnet":  {
+                                     "source":  "local-codex-skills",
+                                     "sourceType":  "local",
+                                     "skillPath":  "skills/kvasirnet/SKILL.md",
+                                     "computedHash":  "39984b8a0bac94b0695d9562482d6e10f80b1dae1ee698a6f17b5c26fc7a8e4b"
+                                 },
+                   "kvasir-soul-sync-update":  {
+                                                   "source":  "local-codex-skills",
+                                                   "sourceType":  "local",
+                                                   "skillPath":  "skills/kvasir-soul-sync-update/SKILL.md",
+                                                   "computedHash":  "0eec545b3cdc6fb8f21280b1bb4f5e8581166a68be9f02c6a975a0fd05e36095"
+                                               },
+                   "learn":  {
+                                 "source":  "local-codex-skills",
+                                 "sourceType":  "local",
+                                 "skillPath":  "skills/learn/SKILL.md",
+                                 "computedHash":  "62bd1bbb307dca5e2f980c6f7d7282d39ccaee1a7c31e72ff8800355715bf68b"
+                             },
+                   "littar-update-skills":  {
+                                                "source":  "local-codex-skills",
+                                                "sourceType":  "local",
+                                                "skillPath":  "skills/littar-update-skills/SKILL.md",
+                                                "computedHash":  "307c2b9610aafb83e6856486901e6561c2eba03d6da10029eaaa8b51711ff384"
+                                            },
+                   "location-install":  {
+                                            "source":  "local-codex-skills",
+                                            "sourceType":  "local",
+                                            "skillPath":  "skills/location-install/SKILL.md",
+                                            "computedHash":  "1f82e2358e05d0238867405f255f9d45872763784865055afac2fb81e50a0857"
+                                        },
+                   "location-register":  {
+                                             "source":  "local-codex-skills",
+                                             "sourceType":  "local",
+                                             "skillPath":  "skills/location-register/SKILL.md",
+                                             "computedHash":  "860217a5fb7f817ba84523080a2a44ee998b980b07cd73f99e7b7548e428e116"
+                                         },
+                   "lottie":  {
+                                  "source":  "local-codex-skills",
+                                  "sourceType":  "local",
+                                  "skillPath":  "skills/lottie/SKILL.md",
+                                  "computedHash":  "7e994e1910f78ecbd552a758994ecf1c6d9ad467c15e77f924a448b3c29439bc"
+                              },
+                   "management-talk":  {
+                                           "source":  "local-codex-skills",
+                                           "sourceType":  "local",
+                                           "skillPath":  "skills/management-talk/SKILL.md",
+                                           "computedHash":  "8b34c86d54ae9847539d9836be78c178827295b26a3755cd96e17a4ee29709c7"
+                                       },
+                   "merged":  {
+                                  "source":  "local-codex-skills",
+                                  "sourceType":  "local",
+                                  "skillPath":  "skills/merged/SKILL.md",
+                                  "computedHash":  "07f3a4a837e2851f0186ee3e85f9b2421e268ff0f1f45b8e720fd6c3c264ea45"
+                              },
+                   "philosophy":  {
+                                      "source":  "local-codex-skills",
+                                      "sourceType":  "local",
+                                      "skillPath":  "skills/philosophy/SKILL.md",
+                                      "computedHash":  "6618ba41bca89184cba70fd8b11c76193d924cc555dc9e1b0f9d5284dc2ec114"
+                                  },
+                   "physical":  {
+                                    "source":  "local-codex-skills",
+                                    "sourceType":  "local",
+                                    "skillPath":  "skills/physical/SKILL.md",
+                                    "computedHash":  "5618ce6658b3ee2daadfed8db046990611ea0d51fa26b39cc89dc3305282eded"
+                                },
+                   "physical-setup":  {
+                                          "source":  "local-codex-skills",
+                                          "sourceType":  "local",
+                                          "skillPath":  "skills/physical-setup/SKILL.md",
+                                          "computedHash":  "6fe886b1de5772f29e904d4168bf9b5f022d3c6a8bff7c96da2fecb98751cf8b"
+                                      },
+                   "post-mortem":  {
+                                       "source":  "local-codex-skills",
+                                       "sourceType":  "local",
+                                       "skillPath":  "skills/post-mortem/SKILL.md",
+                                       "computedHash":  "1db27dc1bbbff4e91ff0ab443270731bff00289430a72e80ade447f590e98651"
+                                   },
+                   "project":  {
+                                   "source":  "local-codex-skills",
+                                   "sourceType":  "local",
+                                   "skillPath":  "skills/project/SKILL.md",
+                                   "computedHash":  "6066e36e17133e9e302226e726824a20b8aa4681dff182a2002603320ef45c7c"
+                               },
+                   "recap":  {
+                                 "source":  "local-codex-skills",
+                                 "sourceType":  "local",
+                                 "skillPath":  "skills/recap/SKILL.md",
+                                 "computedHash":  "2e30aabf91de013a51dccc7f98da32dd63e28b2d0c617081f5f11569a211bb2c"
+                             },
+                   "remotion-to-hyperframes":  {
+                                                   "source":  "local-codex-skills",
+                                                   "sourceType":  "local",
+                                                   "skillPath":  "skills/remotion-to-hyperframes/SKILL.md",
+                                                   "computedHash":  "e5e13caf9401fcce317b9ed4acb14386ff8789f931084cd80e68757959798cd8"
+                                               },
+                   "retrospective":  {
+                                         "source":  "local-codex-skills",
+                                         "sourceType":  "local",
+                                         "skillPath":  "skills/retrospective/SKILL.md",
+                                         "computedHash":  "2a5e6df556ca737a26e44e6bf755712615a157566202c2e819c470ec5c4f522d"
+                                     },
+                   "safe-code":  {
+                                     "source":  "local-codex-skills",
+                                     "sourceType":  "local",
+                                     "skillPath":  "skills/safe-code/SKILL.md",
+                                     "computedHash":  "51141feebab463d524cafb3be2401a5a65d8e8eb30fcea5b7b218f3bed29f7ae"
+                                 },
+                   "schedule":  {
+                                    "source":  "local-codex-skills",
+                                    "sourceType":  "local",
+                                    "skillPath":  "skills/schedule/SKILL.md",
+                                    "computedHash":  "27d6d8c400756cdd0b5c4d6a4e7f80c5b4353bb4ba34ea098bea8d0cc0612d9a"
+                                },
+                   "scrutinize":  {
+                                      "source":  "local-codex-skills",
+                                      "sourceType":  "local",
+                                      "skillPath":  "skills/scrutinize/SKILL.md",
+                                      "computedHash":  "2935979149d232c6614ecc372b1b39741485875f2e98d962d698e0e27e54b319"
+                                  },
+                   "speak":  {
+                                 "source":  "local-codex-skills",
+                                 "sourceType":  "local",
+                                 "skillPath":  "skills/speak/SKILL.md",
+                                 "computedHash":  "b665a438c0d625656d5e886e09767d7f7768668bf8a4ce50f21d495c3e72cc97"
+                             },
+                   "standup":  {
+                                   "source":  "local-codex-skills",
+                                   "sourceType":  "local",
+                                   "skillPath":  "skills/standup/SKILL.md",
+                                   "computedHash":  "d418efb614719b357643801d5faf8837460edc10b7165e51b05d666fe52f44c1"
+                               },
+                   "tailwind":  {
+                                    "source":  "local-codex-skills",
+                                    "sourceType":  "local",
+                                    "skillPath":  "skills/tailwind/SKILL.md",
+                                    "computedHash":  "9bd6f8d0f34e279402722ade8f3046c4916e8025fa86a736be383e90a0896933"
+                                },
+                   "talk-to":  {
+                                   "source":  "local-codex-skills",
+                                   "sourceType":  "local",
+                                   "skillPath":  "skills/talk-to/SKILL.md",
+                                   "computedHash":  "89e877ba2a0980c6953cf5e2205f0c9163cb744b34b7959c5869f7269cafb64f"
+                               },
+                   "three":  {
+                                 "source":  "local-codex-skills",
+                                 "sourceType":  "local",
+                                 "skillPath":  "skills/three/SKILL.md",
+                                 "computedHash":  "c377a618bc05c0025c3f1003080d30509d7c95336a426573588faceea9e94782"
+                             },
+                   "trace":  {
+                                 "source":  "local-codex-skills",
+                                 "sourceType":  "local",
+                                 "skillPath":  "skills/trace/SKILL.md",
+                                 "computedHash":  "556d94400cb8d52880912bcc67dcae4ca38db09b1ffd8a95b747e1a95782525a"
+                             },
+                   "typegpu":  {
+                                   "source":  "local-codex-skills",
+                                   "sourceType":  "local",
+                                   "skillPath":  "skills/typegpu/SKILL.md",
+                                   "computedHash":  "8ed608a53142b84e7587821bc72779866a0e649fca18a1928bf74eca70199f9e"
+                               },
+                   "waapi":  {
+                                 "source":  "local-codex-skills",
+                                 "sourceType":  "local",
+                                 "skillPath":  "skills/waapi/SKILL.md",
+                                 "computedHash":  "c996afd0b03d7a5ecacc9f8683872599da3f26b08576d2ba4b236a1ee3df9354"
+                             },
+                   "watch":  {
+                                 "source":  "local-codex-skills",
+                                 "sourceType":  "local",
+                                 "skillPath":  "skills/watch/SKILL.md",
+                                 "computedHash":  "bb8b3880759c12faa2257115e61334660c597d33d18308d9612a5e49973ffe15"
+                             },
+                   "website-to-hyperframes":  {
+                                                  "source":  "local-codex-skills",
+                                                  "sourceType":  "local",
+                                                  "skillPath":  "skills/website-to-hyperframes/SKILL.md",
+                                                  "computedHash":  "be27e3a95b270a7f83d5d22fff10be3244790c67183f77e900b01b8aa90a5ec0"
+                                              },
+                   "where-we-are":  {
+                                        "source":  "local-codex-skills",
+                                        "sourceType":  "local",
+                                        "skillPath":  "skills/where-we-are/SKILL.md",
+                                        "computedHash":  "b48c1d3447c2f02700506f83495c81f810b044f5b0a31e001b33009979d7a2a7"
+                                    },
+                   "who-are-you":  {
+                                       "source":  "local-codex-skills",
+                                       "sourceType":  "local",
+                                       "skillPath":  "skills/who-are-you/SKILL.md",
+                                       "computedHash":  "f4c3ce51c4744492f966ab9db8458abf02470c51b45107f130e2d46ad97ead1c"
+                                   },
+                   "worktree":  {
+                                    "source":  "local-codex-skills",
+                                    "sourceType":  "local",
+                                    "skillPath":  "skills/worktree/SKILL.md",
+                                    "computedHash":  "0f4cd4681f09b7d6504beb804fb033bbeb564816cc5bf890fcf2d64a94441bb7"
+                                },
+                   "wrap":  {
+                                "source":  "local-codex-skills",
+                                "sourceType":  "local",
+                                "skillPath":  "skills/wrap/SKILL.md",
+                                "computedHash":  "eaade0adf8e17213e97618e2f618fd819e82ef2e33c4953d1d84a4109df1fde0"
+                            }
+               }
 }
