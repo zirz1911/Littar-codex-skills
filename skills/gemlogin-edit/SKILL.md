@@ -26,8 +26,8 @@ Reload Script: `scripts\reload_gemlogin.ps1` (bundled with this skill)
 4. **Target IDs**: Use consistent node IDs (e.g., `open-url-node`) for easier automation.
 
 ## Scripts
-- `scripts/reload_gemlogin.ps1` — Auto-reloads the GemLogin UI by focusing the window and sending `Ctrl+R`.
-- `scripts/create_test_reload.py` — Inserts a minimal test workflow named `DevTools Test Reload` into `db.db`. Useful for verifying that the database write path and UI reload work together.
+- `scripts/reload_gemlogin.ps1` â€” Auto-reloads the GemLogin UI by focusing the window and sending `Ctrl+R`.
+- `scripts/create_test_reload.py` â€” Inserts a minimal test workflow named `DevTools Test Reload` into `db.db`. Useful for verifying that the database write path and UI reload work together.
 
 ## Automation Script Template
 Use Python to interact with the database and auto-reload the UI.
@@ -103,4 +103,4 @@ Use when user asks to:
 - "Batch update GemLogin workflows"
 - "Hack workflow logic directly"
 - "Change start URL for all workflows"
-- "Delete workflow X in GemLogin"
+- "Delete workflow X in GemLogin"
