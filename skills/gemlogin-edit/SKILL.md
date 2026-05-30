@@ -22,7 +22,7 @@ Reload Script: `scripts\reload_gemlogin.py` (bundled with this skill)
 ## Rules
 1. **Always Backup**: Copy `db.db` before writing any changes.
 2. **JSON Integrity**: Validate JSON structure before updating.
-3. **Mandatory Reload UI**: After every database write (update, rename, delete), trigger GemLogin UI reload automatically. Use the bundled Python script (`scripts\reload_gemlogin.py`). It connects to GemLogin Chrome DevTools Protocol (CDP) on port 9222 and runs `location.reload()` directly. If CDP is unavailable, fall back to instructing the user to open DevTools (F12) and run `location.reload()`.
+3. **Mandatory Reload UI**: After every database write (update, rename, delete), trigger GemLogin UI reload automatically. Use the bundled Python script (`scripts\reload_gemlogin.py`). It connects to GemLogin Chrome DevTools Protocol (CDP) on port 9222 and runs `location.reload()` directly. If CDP is unavailable, fall back to instructing the user to open DevTools (F12) and run `location.reload()`. Reload is NOT optional -- every write must be followed by a reload.
 4. **Target IDs**: Use consistent node IDs (e.g., `open-url-node`) for easier automation.
 
 ## Scripts
@@ -87,7 +87,7 @@ def update_workflow(name, workflow_dict, new_name=None):
                  (new_script, target_name, name))
     conn.commit()
     conn.close()
-    reload_gemlogin_ui()
+    reload_gemlogin_ui()  # MANDATORY
 
 def delete_workflow(name):
     backup_db()
@@ -95,7 +95,7 @@ def delete_workflow(name):
     conn.execute("DELETE FROM apps WHERE name = ?", (name,))
     conn.commit()
     conn.close()
-    reload_gemlogin_ui()
+    reload_gemlogin_ui()  # MANDATORY
 ```
 
 ## Trigger

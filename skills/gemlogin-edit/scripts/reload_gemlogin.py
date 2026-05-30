@@ -5,7 +5,6 @@ import sys
 
 def reload_gemlogin():
     try:
-        # list CDP pages
         r = urllib.request.urlopen("http://localhost:9222/json/list", timeout=3)
         pages = json.loads(r.read())
     except Exception as e:
@@ -14,10 +13,19 @@ def reload_gemlogin():
 
     target = None
     for p in pages:
+        url = p.get("url", "")
         title = p.get("title", "")
-        if title.startswith("GemLogin") and "DevTools" not in title:
+        # Match GemLogin main window (not DevTools), prefer localhost:1010
+        if "localhost:1010" in url or ("DevTools" not in title and title.startswith("GemLogin")):
             target = p
             break
+
+    if not target:
+        # fallback: any non-DevTools page
+        for p in pages:
+            if "DevTools" not in p.get("title", "") and len(p.get("title", "")) > 0:
+                target = p
+                break
 
     if not target:
         print("NOT_FOUND")
