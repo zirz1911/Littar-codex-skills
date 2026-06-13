@@ -1,0 +1,4 @@
+interface:
+  display_name: "Facebook Ads"
+  short_description: "Run and use local Facebook Ads MCP server"
+  default_prompt: "Use $facebook-ads to ensure local Facebook Ads MCP server is running and call its tools."

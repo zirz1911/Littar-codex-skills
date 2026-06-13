@@ -1,0 +1,4 @@
+interface:
+  display_name: "GemLogin TikTok"
+  short_description: "TikTok workflow patterns for GemLogin"
+  default_prompt: "Use $gemlogin-tiktok to patch or explain TikTok-specific GemLogin workflows."

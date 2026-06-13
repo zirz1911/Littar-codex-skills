@@ -360,6 +360,24 @@
       "sourceType": "local",
       "skillPath": "skills/capcut/SKILL.md",
       "computedHash": "a9f7442ab4eb665212d07377812543ef037dd2bae1b591b1ae3793121b33daae"
+    },
+    "facebook-ads": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/facebook-ads/SKILL.md",
+      "computedHash": "778064b5867104d2656dcb4c93e0f20a4057279c5596776ebbbc211e8958fd85"
+    },
+    "gemlogin-edit": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/gemlogin-edit/SKILL.md",
+      "computedHash": "8b9efc1c465e5a03b4091df02edda54f6cf4f49755ab8dcd1760a72b8eb4d178"
+    },
+    "gemlogin-tiktok": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/gemlogin-tiktok/SKILL.md",
+      "computedHash": "0baf96d60a7ab98d88c7904f2a06854f1c7a542cec7dddcc9c4e915915570416"
     }
   }
 }
