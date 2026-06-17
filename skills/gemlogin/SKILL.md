@@ -1,17 +1,30 @@
 ---
 name: gemlogin
-description: Run, register, and use the GemLogin MCP server from E:\Projects\gemlogin-mcp. Use when the user asks to connect Codex, Claude Code, Cursor, or another MCP client to GemLogin; list, start, stop, warm, or automate GemLogin browser profiles; get a CDP remote debugging URL; run GemLogin local scripts; or troubleshoot GemLogin MCP/local API issues.
+description: Run, register, and use the GemLogin MCP server from a local gemlogin-mcp clone on Windows or macOS. Use when the user asks to connect Codex, Claude Code, Cursor, or another MCP client to GemLogin; list, start, stop, warm, or automate GemLogin browser profiles; get a CDP remote debugging URL; run GemLogin local scripts; or troubleshoot GemLogin MCP/local API issues.
 ---
 
 # Gemlogin
 
-Use this skill to work with the local GemLogin MCP server at `E:\Projects\gemlogin-mcp`.
+Use this skill to work with a local `gemlogin-mcp` checkout.
+
+Typical repo locations seen so far:
+- Windows: `E:\Projects\gemlogin-mcp`
+- macOS: `/Users/pajipan/Desktop/Paji/project/gemlogin-mcp`
+
+Do not hardcode one path blindly. First confirm where the repo exists on the current machine.
 
 GemLogin itself must be running first. The MCP server is a thin stdio wrapper around GemLogin's local REST API, defaulting to `http://localhost:1010`.
 
 ## Quick Checks
 
 Before changing MCP client config, verify the local app and repo:
+
+```bash
+curl -fsS http://localhost:1010/api/status
+test -f /path/to/gemlogin-mcp/pyproject.toml
+```
+
+Windows PowerShell equivalent:
 
 ```powershell
 Invoke-RestMethod http://localhost:1010/api/status
@@ -22,26 +35,46 @@ If `localhost:1010` refuses the connection, open GemLogin and wait for the UI/AP
 
 ## Install Or Refresh
 
-Install from the local repo so the `gemlogin-mcp` command is available:
+Install from the local repo so the MCP entrypoint is available:
 
-```powershell
-python -m pip install -e E:\Projects\gemlogin-mcp
+```bash
+python -m pip install -e /path/to/gemlogin-mcp
 ```
 
 Smoke-run the server only through an MCP inspector/client because it speaks stdio:
 
-```powershell
-python -m gemlogin_mcp
+```bash
+python -m gemlogin_mcp.server
 ```
 
 Stop it with `Ctrl+C` if started manually.
 
+If you want a stable Codex registration, prefer a dedicated Python interpreter for this MCP install:
+
+- Windows example: `C:\Users\pajipan\.codex\venvs\gemlogin-mcp\Scripts\python.exe`
+- macOS example: `/Users/pajipan/.codex/venvs/gemlogin-mcp/bin/python`
+
 ## Register With MCP Clients
+
+For Codex:
+
+```bash
+codex mcp add gemlogin -- /absolute/path/to/python -m gemlogin_mcp.server
+codex mcp list
+```
+
+Use MCP env overrides when first-run profile startup is slow:
+
+```bash
+codex mcp add gemlogin \
+  --env GEMLOGIN_TIMEOUT=120 \
+  -- /absolute/path/to/python -m gemlogin_mcp.server
+```
 
 For Claude Code:
 
-```powershell
-claude mcp add gemlogin -- gemlogin-mcp
+```bash
+claude mcp add gemlogin -- /absolute/path/to/python -m gemlogin_mcp.server
 claude mcp list
 ```
 
@@ -51,7 +84,8 @@ For Cursor, add this to the MCP config:
 {
   "mcpServers": {
     "gemlogin": {
-      "command": "gemlogin-mcp"
+      "command": "/absolute/path/to/python",
+      "args": ["-m", "gemlogin_mcp.server"]
     }
   }
 }
@@ -63,7 +97,8 @@ For clients that need environment overrides:
 {
   "mcpServers": {
     "gemlogin": {
-      "command": "gemlogin-mcp",
+      "command": "/absolute/path/to/python",
+      "args": ["-m", "gemlogin_mcp.server"],
       "env": {
         "GEMLOGIN_BASE": "http://localhost:1010",
         "GEMLOGIN_TIMEOUT": "120"
@@ -115,7 +150,7 @@ Prompts:
 ## Troubleshooting
 
 - `connection refused :1010`: GemLogin app is not running or the local API is not ready.
-- `gemlogin-mcp` command not found: run `python -m pip install -e E:\Projects\gemlogin-mcp`, then reopen the terminal/client.
+- MCP command not found or import failure: run `python -m pip install -e /path/to/gemlogin-mcp`, then reopen the terminal/client.
 - Start profile times out: set `GEMLOGIN_TIMEOUT=120` in the MCP server env.
 - Wrong API host: set `GEMLOGIN_BASE` in the MCP client config before launching the client.
 - Cloud webhook failure: verify `device_id`, `soft_id`, `token`, and `workflow_id`; auth is sent as the `token` body field, not a Bearer header.

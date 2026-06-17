@@ -2,8 +2,19 @@ import sqlite3
 import json
 import sys
 from datetime import datetime
+from pathlib import Path
 
-db_path = r"C:\Users\pajipan\.gemlogin\db.db"
+
+def detect_db_path():
+    if len(sys.argv) > 1:
+        return sys.argv[1]
+    home = Path.home()
+    if sys.platform == "darwin":
+        return str(home / ".gemlogin" / "db.db")
+    return r"C:\Users\pajipan\.gemlogin\db.db"
+
+
+db_path = detect_db_path()
 app_id = "devtools-test-reload"
 app_name = "DevTools Test Reload"
 

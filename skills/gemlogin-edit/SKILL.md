@@ -7,9 +7,11 @@ description: Directly modify GemLogin workflows via its local SQLite database. U
 Directly modify GemLogin workflows via its local SQLite database.
 
 ## Path
-Database: `C:\Users\pajipan\.gemlogin\db.db`
+Database:
+- Windows: `C:\Users\pajipan\.gemlogin\db.db`
+- macOS: `/Users/<user>/.gemlogin/db.db`
 Workflows Table: `apps`
-Reload Script: `scripts\reload_gemlogin.py` (bundled with this skill)
+Reload Script: `scripts/reload_gemlogin.py` (bundled with this skill)
 
 ## Capability
 - List all internal workflows.
@@ -22,7 +24,10 @@ Reload Script: `scripts\reload_gemlogin.py` (bundled with this skill)
 ## Rules
 1. **Always Backup**: Copy `db.db` before writing any changes.
 2. **JSON Integrity**: Validate JSON structure before updating.
-3. **Mandatory Reload UI**: After every database write (update, rename, delete), trigger GemLogin UI reload automatically. Use the bundled Python script (`scripts\reload_gemlogin.py`). It connects to GemLogin Chrome DevTools Protocol (CDP) on port 9222 and runs `location.reload()` directly. If CDP is unavailable, fall back to instructing the user to open DevTools (F12) and run `location.reload()`. Reload is NOT optional -- every write must be followed by a reload.
+3. **Mandatory Reload UI**: After every database write (update, rename, delete), trigger GemLogin UI reload automatically. Use the bundled Python script (`scripts/reload_gemlogin.py`). It prefers Chrome DevTools Protocol (CDP) on port `9222` and runs `location.reload()` directly. If CDP is unavailable, use the platform fallback:
+   - macOS: AppleScript `Cmd+R` on the GemLogin window. This requires Accessibility/Automation permission for Terminal or the calling app.
+   - Windows: PowerShell keyboard fallback that focuses GemLogin and sends `Ctrl+R`.
+   If both paths fail, tell the user exactly which fallback failed and how to reload manually.
 4. **Target IDs**: Use consistent node IDs (e.g., `open-url-node`) for easier automation.
 5. **Read Real Shape First**: In GemLogin workflow JSON, actual block flow usually lives in `script -> drawflow -> nodes` and `script -> drawflow -> edges`. Do not assume `nodes` / `edges` exist at top level.
 6. **Block Kind vs Node Type**: Many executable nodes have generic `type: "BlockBasicWithFallback"`. Real block kind is often in `label` such as `event-click`, `clipboard`, `command`, `file-action`, `press-key`, `element-scroll`.
@@ -42,9 +47,9 @@ Reload Script: `scripts\reload_gemlogin.py` (bundled with this skill)
 20. **Stale UI State Matters Across Iterations**: Before assuming selector or form failure, check whether previous loop left modal, panel, or toggle state open. Sometimes fix belongs in loop cleanup, not failing block itself.
 
 ## Scripts
-- `scripts/reload_gemlogin.py` -- CDP-based reload. Connects to `localhost:9222`, finds the GemLogin page, and executes `location.reload()` over the DevTools protocol.
-- `scripts/reload_gemlogin.ps1` -- Legacy keyboard fallback. Focuses the GemLogin window and sends `Ctrl+R`.
-- `scripts/create_test_reload.py` -- Inserts a minimal test workflow named `DevTools Test Reload` into `db.db`.
+- `scripts/reload_gemlogin.py` -- Cross-platform reload helper. Tries CDP on `localhost:9222` first, then AppleScript on macOS or PowerShell on Windows.
+- `scripts/reload_gemlogin.ps1` -- Windows keyboard fallback. Focuses the GemLogin window and sends `Ctrl+R`.
+- `scripts/create_test_reload.py` -- Inserts a minimal test workflow named `DevTools Test Reload` into the current machine's `db.db`.
 
 ## Automation Script Template
 Use Python to interact with the database and auto-reload the UI.
@@ -53,7 +58,17 @@ Use Python to interact with the database and auto-reload the UI.
 import sqlite3, json, os, shutil, subprocess, sys
 from datetime import datetime
 
-DB_PATH = r"C:\Users\pajipan\.gemlogin\db.db"
+from pathlib import Path
+
+def detect_db_path():
+    env = os.environ.get("GEMLOGIN_DB_PATH")
+    if env:
+        return env
+    if sys.platform == "darwin":
+        return str(Path.home() / ".gemlogin" / "db.db")
+    return r"C:\Users\pajipan\.gemlogin\db.db"
+
+DB_PATH = detect_db_path()
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 RELOAD_PY = os.path.join(SCRIPT_DIR, "scripts", "reload_gemlogin.py")
 
@@ -65,7 +80,7 @@ def backup_db():
 
 def reload_gemlogin_ui():
     if not os.path.exists(RELOAD_PY):
-        print("[reload] Script not found. Open GemLogin DevTools (F12) and run location.reload()")
+        print("[reload] Script not found. Open GemLogin DevTools and run location.reload()")
         return
     try:
         result = subprocess.run(
@@ -76,7 +91,7 @@ def reload_gemlogin_ui():
         if out == "OK":
             print("[reload] GemLogin UI reloaded.")
         elif out == "NOT_FOUND":
-            print("[reload] GemLogin page not found. Open DevTools (F12) and run location.reload()")
+            print("[reload] GemLogin page not found. Open GemLogin DevTools and run location.reload()")
         else:
             print("[reload] Unexpected output:", out, result.stderr)
     except Exception as e:
@@ -115,6 +130,7 @@ def delete_workflow(name):
 ```
 
 ## DB Shape Notes
+- On both macOS and Windows, the actual workflow DB table is `apps`.
 - Workflow JSON from `apps.script` is not flat. Inspect `workflow_dict["drawflow"]["nodes"]` and `workflow_dict["drawflow"]["edges"]`.
 - `nodes` is an array, not always an object map. Build your own `node_map = {node["id"]: node for node in nodes}` when patching.
 - Edges use node-handle strings like `<node-id>-input-1`, `<node-id>-output-1`, or `<node-id>-output-fallback`.
