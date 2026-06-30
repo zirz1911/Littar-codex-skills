@@ -265,6 +265,12 @@
       "skillPath": "skills/schedule/SKILL.md",
       "computedHash": "27d6d8c400756cdd0b5c4d6a4e7f80c5b4353bb4ba34ea098bea8d0cc0612d9a"
     },
+    "scourgify": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/scourgify/SKILL.md",
+      "computedHash": "2c859892d33d0a9513a6567614452b77badade3221df20a3d77211eb2b25170f"
+    },
     "scrutinize": {
       "source": "local-codex-skills",
       "sourceType": "local",

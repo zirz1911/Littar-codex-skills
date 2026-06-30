@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scourgify"
+  short_description: "Trace messy code before refactoring"
+  default_prompt: "Use $scourgify to analyze messy or AI-generated code before rewriting it."
