@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Install bundled Codex skills into a target repository.
 
-Copies ./skills/* to <target>/.agents/skills/* and updates
-<target>/skills-lock.json with local entries and SHA-256 hashes.
+Copies ./skills/* to the repo-local agent folders and the user's Codex
+skills directory, then updates <target>/skills-lock.json with local
+entries and SHA-256 hashes.
 """
 
 from __future__ import annotations
@@ -33,6 +34,14 @@ def load_json(path: Path) -> dict:
         return json.load(handle)
 
 
+def install_skill_dir(source: Path, destination_root: Path) -> None:
+    destination_root.mkdir(parents=True, exist_ok=True)
+    dest = destination_root / source.name
+    if dest.exists():
+        shutil.rmtree(dest)
+    shutil.copytree(source, dest)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Install Littar Codex skills into a repository")
     parser.add_argument("target", nargs="?", default=".", help="Target repository path, default: current directory")
@@ -54,8 +63,11 @@ def main() -> int:
         skill_dirs = [path for path in skill_dirs if path.name in selected]
 
     target = Path(args.target).expanduser().resolve()
-    target_skills = target / ".agents" / "skills"
-    target_skills.mkdir(parents=True, exist_ok=True)
+    install_roots = [
+        target / ".agents" / "skills",
+        target / ".claude" / "skills",
+        Path.home() / ".codex" / "skills",
+    ]
 
     lock_path = target / "skills-lock.json"
     lock = load_json(lock_path)
@@ -64,10 +76,8 @@ def main() -> int:
 
     installed = []
     for skill_dir in skill_dirs:
-        dest = target_skills / skill_dir.name
-        if dest.exists():
-            shutil.rmtree(dest)
-        shutil.copytree(skill_dir, dest)
+        for install_root in install_roots:
+            install_skill_dir(skill_dir, install_root)
 
         skill_md = skill_dir / "SKILL.md"
         lock["skills"][skill_dir.name] = {
@@ -83,6 +93,7 @@ def main() -> int:
         handle.write("\n")
 
     print(f"Installed {len(installed)} skill(s) into {target}")
+    print(f"Synced local Codex skills into {Path.home() / '.codex' / 'skills'}")
     for name in installed:
         print(f"- {name}")
     return 0

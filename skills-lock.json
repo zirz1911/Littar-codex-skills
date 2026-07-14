@@ -265,6 +265,12 @@
       "skillPath": "skills/schedule/SKILL.md",
       "computedHash": "27d6d8c400756cdd0b5c4d6a4e7f80c5b4353bb4ba34ea098bea8d0cc0612d9a"
     },
+    "serpapi": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/serpapi/SKILL.md",
+      "computedHash": "e6efd018848d6a4f80e8e50e1ac9e5bc11428539be8aa12b2627d3a1cb5abf01"
+    },
     "scourgify": {
       "source": "local-codex-skills",
       "sourceType": "local",

@@ -22,4 +22,4 @@ List bundled skills:
 ./install.sh --list
 ```
 
-The installer copies skills into `.agents/skills/` and updates `skills-lock.json`.
+The installer copies skills into `.agents/skills/`, `.claude/skills/`, and `~/.codex/skills/`, then updates `skills-lock.json`.
