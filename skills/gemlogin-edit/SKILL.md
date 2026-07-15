@@ -538,7 +538,46 @@ Source: `D:\Littar-Codex\Kvasir\memory\retrospectives\2026-06\05\09.45_gemlogin_
   - timestamped backup before every write
   - reload immediately after every write
 
-## Trigger
++
+## Canonical workflow layout contract
+
+Use these three workflows as the layout reference set:
+
+- **Best baseline — [TikTok] Like comment share**: setup/loop on the left, one clear MAIN PATH row, one FALLBACK PATH row below it, and a legend note on the far right.
+- **Loop baseline — [TikTok] Warm-up Feed**: action branches converge into one shared scroll -> pause -> loop-breakpoint return lane at the bottom.
+- **Refactor warning — [FB] Watch Live Comment Share**: V1/V2 and reaction branches are functionally present but the graph becomes a wide, crossing canvas without section notes; use separate swimlanes before adding more branches.
+
+After a behavior patch, run a layout pass before declaring the workflow done:
+
+1. Read the real graph and identify the primary execution path, fallback paths, loops, and independent feature lanes.
+2. Place execution columns left-to-right by order of travel. Keep related nodes in the same column band; do not place a fallback node in front of its main predecessor.
+3. Use stable swimlanes:
+   - MAIN PATH: center row, approximately y=200 to y=350
+   - FALLBACK PATH: below main, approximately y=650 to y=850
+   - BRANCH/ACTION: grouped rows around the branch condition, with about 120 px vertical spacing
+   - LOOP RETURN: one lower lane; keep scroll, pause, and loop-breakpoint adjacent
+   - NOTES: above the section they describe, never in the executable edge path
+4. For a workflow with multiple versions or modes, give each version its own horizontal swimlane. Connect a fallback to the next lane through one labelled handoff node instead of crossing through another mode's action branches.
+5. Keep one shared convergence point for repeated actions. In warm-up loops, every like/comment/share/repost branch must return to the same scroll lane unless the behavior explicitly requires a different exit.
+6. Put fallback blocks directly below or immediately beside their main block. Do not scatter JS fallbacks at the far end of the canvas.
+7. Add section notes before final positioning: SETUP, MAIN PATH, FALLBACK PATH, action groups, LOOP RETURN, END, and LEGEND when the graph is large.
+8. Label every cross-lane edge with its intent, such as Fallback to V2, Skip comment, Next video, or Done. Blank labels are allowed only for trivial adjacent steps.
+9. Keep the final end node at the right side of the primary exit. Do not make the main path travel back across the canvas to finish.
+
+### Layout acceptance check
+
+A workflow layout is acceptable only when:
+
+- a reader can follow the main path left-to-right without opening nodes;
+- fallback edges stay in the fallback lane and do not cut through another action group;
+- branches with the same purpose are vertically grouped;
+- loop return nodes are adjacent and visibly separate from action branches;
+- notes describe the current graph, not the previous version;
+- node positions and edge routing are both updated and read back after the DB write;
+- the graph remains understandable at editor zoom-out, not only at full zoom.
+
+Do not optimize for the smallest canvas. Optimize for one readable path, named lanes, and predictable recovery. A wider graph is acceptable when it prevents edge crossings; an extra node is not acceptable merely to make layout look tidy.
++## Trigger
 Use when user asks to:
 - "Edit workflow X in db"
 - "Batch update GemLogin workflows"
