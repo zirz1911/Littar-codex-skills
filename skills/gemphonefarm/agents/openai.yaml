@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gemphonefarm"
+  short_description: "Run and use the GemPhoneFarm MCP server"
+  default_prompt: "Use $gemphonefarm to connect and operate the local GemPhoneFarm MCP server."

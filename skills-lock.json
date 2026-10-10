@@ -5,7 +5,7 @@
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/about-kvasir/SKILL.md",
-      "computedHash": "94ef2648f6fa6492bcc1ee9052d44522f4ce319ceefb29c518b2ea8b294fe413"
+      "computedHash": "ad05627dc75bda619f7ab54ed65c8ed306b216ef9c394f07cf413054cb42e99b"
     },
     "animejs": {
       "source": "local-codex-skills",
@@ -17,13 +17,73 @@
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/awaken/SKILL.md",
-      "computedHash": "9f1768abfc997f0e284d10887f4451509faae736a726078de920088c78835117"
+      "computedHash": "313eb6140051168d86bb1e8962f346e8b5502b401c821bff271342cbe84dc3d1"
     },
     "birth": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/birth/SKILL.md",
-      "computedHash": "f7b3e20d227084f906f9e05910c2df3a74c8813d091291ff30b6c6a3cb62b712"
+      "computedHash": "f85bf4615905d9093a91c4dfbccbecb6450717edaa5cdeb6ddea50afafdf31f2"
+    },
+    "capcut": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/capcut/SKILL.md",
+      "computedHash": "7e1a49d2da3b53166aab5d2a13e88ddc9f730c084882b628f807ed9f264ec962"
+    },
+    "capcut-affiliate": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/capcut-affiliate/SKILL.md",
+      "computedHash": "1751f143e02a6689475c2d66c97afa2db6794dceb6a285396f3ac50a01b82c07"
+    },
+    "capcut-sub": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/capcut-sub/SKILL.md",
+      "computedHash": "942c1756eaea9497655c8164af976f5b9035ff7d58d8547a173b5064598b075f"
+    },
+    "cavecrew": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/cavecrew/SKILL.md",
+      "computedHash": "b74f374f6aae6e9a31e78e7d876860406fe5833378e9298536edf176c12f379b"
+    },
+    "caveman": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/caveman/SKILL.md",
+      "computedHash": "e38ec671ecbee47ce234190be12615daf60ac667d775b7340d49d07f4f63c7bc"
+    },
+    "caveman-commit": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/caveman-commit/SKILL.md",
+      "computedHash": "bed95acc73045d761a48a815d8a5bb6ea617c79b043ed27d7ed61386c6b5d961"
+    },
+    "caveman-compress": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/caveman-compress/SKILL.md",
+      "computedHash": "58b46381bd7f1f9f3dad9e78941088ca253e45f20cc3a144cb3e568f2468d273"
+    },
+    "caveman-help": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/caveman-help/SKILL.md",
+      "computedHash": "590d6c6c17254bda56d18da7cc9d0bf252aeec5d1c78b77dd7ae4cabb8404f89"
+    },
+    "caveman-review": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/caveman-review/SKILL.md",
+      "computedHash": "9ef09065f26b9781275b5a4775e14870e331fab833efb2a2aa33f3205a2b83c3"
+    },
+    "caveman-stats": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/caveman-stats/SKILL.md",
+      "computedHash": "a6417223971cd1883b4a48b4c7456669aefc851a4e1b0cf2b7d7080c17bb798f"
     },
     "contribute-catalog": {
       "source": "local-codex-skills",
@@ -59,49 +119,97 @@
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/debug-mantra/SKILL.md",
-      "computedHash": "a8c3dafdc0709c21fcaec9b33c5924bf289b72ff4b731ed6f6b8ed71f1e30d9d"
+      "computedHash": "475d3b46197d47ee9f68c273be68c083993737e2d0b2ae5c7c5f2d8a983d2ab9"
     },
     "deep-research": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/deep-research/SKILL.md",
-      "computedHash": "ee9519d3a656e79d0310d8da94f1fbb2bc0005cefbe34a02910731dc806624ea"
+      "computedHash": "53dc2b707be7ff562d03a4ade4f524025e7e02b98164316fbb7828252b14eabd"
     },
     "dig": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/dig/SKILL.md",
-      "computedHash": "354509c9281575e5507938d8686b9352790cd37e8dbd483ad80e3cd1534f65e1"
+      "computedHash": "7080ac3edff49f6a25db1ef6855ab02a23e149ba672cbc56bcbf96185cc2c5be"
+    },
+    "facebook-ads": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/facebook-ads/SKILL.md",
+      "computedHash": "da9538c6a0f556810f4a8165b605c10eeee1b0f54b7779072c901db20dc591d5"
     },
     "feel": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/feel/SKILL.md",
-      "computedHash": "97e210ab70e63cb40626c28d18bf5be0721bf35d913cb5ff5c5d10f1d116d696"
+      "computedHash": "a2915407afb439f16566ee3bebdc58b5571992284ad52a5d91a39cb53391bad2"
     },
     "forward": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/forward/SKILL.md",
-      "computedHash": "ea6c396117f6f612fb07992e53248f8fbe9048edba159a23bb428677a5fcf634"
+      "computedHash": "b3a1d20fd7e90af94b67a83b5fb5f278d2131431103110d985c5279e54e68ffa"
     },
     "fyi": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/fyi/SKILL.md",
-      "computedHash": "d7a4d32cfc98cacb254ab1f05083cca1d085845bfc0c58fdfb1de50cbffe72fb"
+      "computedHash": "be0d11fd4670d6345f388cc098e1fd16f81238871ad22418fe9369d310ad04d9"
     },
     "gemini": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/gemini/SKILL.md",
-      "computedHash": "ff37a1eaa3b0c69b53ecbdd4ad8d444043d6dedfe94ae7b326aecc07a85016a1"
+      "computedHash": "db25d524d8891af6338af86ff0b786c94b538b5e3fadbdc21a44dfd1f9aa3427"
     },
     "gemlogin": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/gemlogin/SKILL.md",
-      "computedHash": "1d6e246cbcf4f4df5b0f2f3a53184c07165b455cc572380777d6c772e128455b"
+      "computedHash": "8e53263935768af87fb4e616a9d071b15401f3916bc6053fc7dd5e043baac73f"
+    },
+    "gemlogin-browser": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/gemlogin-browser/SKILL.md",
+      "computedHash": "d3d2b55f68d13fc05a76942cdf9f32c151d7d77b9fd6c8eb8a72d0da8058851c"
+    },
+    "gemlogin-edit": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/gemlogin-edit/SKILL.md",
+      "computedHash": "a5a132c4e7985a594408c0136eb22069b19eec7db8de625f1b5093722d34eaf8"
+    },
+    "gemlogin-facebook": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/gemlogin-facebook/SKILL.md",
+      "computedHash": "3ca4d44f15071b42ae7a29c0f5792deee1470236c30d407db9b7e4f0b5525d04"
+    },
+    "gemlogin-flow": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/gemlogin-flow/SKILL.md",
+      "computedHash": "fc5e3447487ba10ce4fba758ac86f94bbf180ace38144d45f70096e4e9397bf0"
+    },
+    "gemlogin-tiktok": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/gemlogin-tiktok/SKILL.md",
+      "computedHash": "f30dcad1b0558ce71e553035dacbef7ab2bb6e5aa972647ae373da92f3173298"
+    },
+    "gemphonefarm": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/gemphonefarm/SKILL.md",
+      "computedHash": "d23a1e7927d4b659aaeabc409cc2f148982d2d61b18553b2d0b957105c1e31ef"
+    },
+    "gemphonefarm-edit": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/gemphonefarm-edit/SKILL.md",
+      "computedHash": "95b4971d59fae6dd3873d171003397fe282615fd8a822f665b9da1cd845a7290"
     },
     "genz-cut": {
       "source": "local-codex-skills",
@@ -143,25 +251,25 @@
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/kvasir/SKILL.md",
-      "computedHash": "b54389a95e21566498db7bdfb0d837f05acdb3805699a3d10c8d8d1de6ea5b1a"
+      "computedHash": "c0af5569c63770a2e946a43ad19e8290a317241b4eb3ee40504dc53da6368113"
     },
     "kvasir-family-scan": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/kvasir-family-scan/SKILL.md",
-      "computedHash": "6d6a2da3d6317ed5ec3a764bb5c27b3f8a4fe1a006f139a8a8797070ecf18d8a"
-    },
-    "kvasirnet": {
-      "source": "local-codex-skills",
-      "sourceType": "local",
-      "skillPath": "skills/kvasirnet/SKILL.md",
-      "computedHash": "39984b8a0bac94b0695d9562482d6e10f80b1dae1ee698a6f17b5c26fc7a8e4b"
+      "computedHash": "54c31c61934a73e97ee24370432889a3eea53277240a1444db0fd31b53e95138"
     },
     "kvasir-soul-sync-update": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/kvasir-soul-sync-update/SKILL.md",
-      "computedHash": "0eec545b3cdc6fb8f21280b1bb4f5e8581166a68be9f02c6a975a0fd05e36095"
+      "computedHash": "0c5b888e69e96b7b455b641b5f6516d20bd902ed7d696dbd24fdda100eb574b9"
+    },
+    "kvasirnet": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/kvasirnet/SKILL.md",
+      "computedHash": "2b7bf343c361b8ca0e27c957a69394d94ae4daead20455a1661e46b14a09e98a"
     },
     "learn": {
       "source": "local-codex-skills",
@@ -179,13 +287,13 @@
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/location-install/SKILL.md",
-      "computedHash": "1f82e2358e05d0238867405f255f9d45872763784865055afac2fb81e50a0857"
+      "computedHash": "9279e7fd72a24dac19e733ea1bfdf3ee783b9b1bc91d93ce7a921576a169ef6d"
     },
     "location-register": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/location-register/SKILL.md",
-      "computedHash": "860217a5fb7f817ba84523080a2a44ee998b980b07cd73f99e7b7548e428e116"
+      "computedHash": "0b0ae7e4882d3be1ab95495f8e6d4c00af8c523f13bbc30974f0598865b5cf45"
     },
     "lottie": {
       "source": "local-codex-skills",
@@ -197,49 +305,85 @@
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/management-talk/SKILL.md",
-      "computedHash": "8b34c86d54ae9847539d9836be78c178827295b26a3755cd96e17a4ee29709c7"
+      "computedHash": "ab83d3bd5412d524a156e511157db278df14e2d38e31a2f102dc7bbbd27006ac"
     },
     "merged": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/merged/SKILL.md",
-      "computedHash": "07f3a4a837e2851f0186ee3e85f9b2421e268ff0f1f45b8e720fd6c3c264ea45"
+      "computedHash": "15114afa4140fa01a4141b3895fce8ecb888553a63bbdf7da6937aef39bfd6ce"
+    },
+    "paji-affiliate": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/paji-affiliate/SKILL.md",
+      "computedHash": "f57b9b16803a786cb524eed48f7cbe99e0ae8ae94ea4933174114a0085fda2b4"
+    },
+    "paji-cut": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/paji-cut/SKILL.md",
+      "computedHash": "62567c3574e65dc35fd055b572a88831533b42a026e2bb3eed06bde458943d8c"
+    },
+    "paji-summary": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/paji-summary/SKILL.md",
+      "computedHash": "1f07bfed0ec7c3a1f5e7b079eeb5fdb0845df62520d51ce38276c40c02e03f7e"
     },
     "philosophy": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/philosophy/SKILL.md",
-      "computedHash": "6618ba41bca89184cba70fd8b11c76193d924cc555dc9e1b0f9d5284dc2ec114"
+      "computedHash": "cf193e7eafe2c064458922178491adcd93fa226fe4edcaa7926bb1e055b4f95b"
     },
     "physical": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/physical/SKILL.md",
-      "computedHash": "5618ce6658b3ee2daadfed8db046990611ea0d51fa26b39cc89dc3305282eded"
+      "computedHash": "a8c8cd7b301ccc92a99d5ad2c971de60f8da53a6e028e2a698bff51c2e5e121a"
     },
     "physical-setup": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/physical-setup/SKILL.md",
-      "computedHash": "6fe886b1de5772f29e904d4168bf9b5f022d3c6a8bff7c96da2fecb98751cf8b"
+      "computedHash": "3e4dca63e53bf3f92ef2d83e1987a095ecad144197aa923306e4650ab3d4e704"
     },
     "post-mortem": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/post-mortem/SKILL.md",
-      "computedHash": "1db27dc1bbbff4e91ff0ab443270731bff00289430a72e80ade447f590e98651"
+      "computedHash": "ebea668b558eccd2a516ef0d35b0ecdcb6fa47c6d3eee990a8f5957a9c6d1d64"
+    },
+    "product-video-direct-open": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/product-video-direct-open/SKILL.md",
+      "computedHash": "bda8c61d9b42e953da561eff9deffdbfda04cee199d654a1481ed09f4209dc90"
+    },
+    "product-video-storyboard": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/product-video-storyboard/SKILL.md",
+      "computedHash": "8389db1a3ca912ae5ba57096e0068a315e843d8d8cc0e655112a01e694f73b29"
+    },
+    "product-video-storyboard-20s": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/product-video-storyboard-20s/SKILL.md",
+      "computedHash": "5c9d548d69028532ff706111811f9e7f84d4178d56254c3fd509c885a4274453"
     },
     "project": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/project/SKILL.md",
-      "computedHash": "6066e36e17133e9e302226e726824a20b8aa4681dff182a2002603320ef45c7c"
+      "computedHash": "aa03cef5214cfdb43657e186bbac7638eb7f5037291fdcc5344e1de76ab4fc38"
     },
     "recap": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/recap/SKILL.md",
-      "computedHash": "2e30aabf91de013a51dccc7f98da32dd63e28b2d0c617081f5f11569a211bb2c"
+      "computedHash": "90e72cc64101ee10ae8f78ffe8d8cc71aefebfa641184b6f3f0dca5485762c32"
     },
     "remotion-to-hyperframes": {
       "source": "local-codex-skills",
@@ -251,49 +395,49 @@
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/retrospective/SKILL.md",
-      "computedHash": "2a5e6df556ca737a26e44e6bf755712615a157566202c2e819c470ec5c4f522d"
+      "computedHash": "7aa8f4bd7a1345059083c1ee7e46a3bddc690f20d50b0f66d1ef9c14841f52bf"
     },
     "safe-code": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/safe-code/SKILL.md",
-      "computedHash": "51141feebab463d524cafb3be2401a5a65d8e8eb30fcea5b7b218f3bed29f7ae"
+      "computedHash": "918b0a3d8ca61b78fdefca0d28d598404caf5cc6f239c60a95b1f878698ef3c7"
     },
     "schedule": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/schedule/SKILL.md",
-      "computedHash": "27d6d8c400756cdd0b5c4d6a4e7f80c5b4353bb4ba34ea098bea8d0cc0612d9a"
-    },
-    "serpapi": {
-      "source": "local-codex-skills",
-      "sourceType": "local",
-      "skillPath": "skills/serpapi/SKILL.md",
-      "computedHash": "e6efd018848d6a4f80e8e50e1ac9e5bc11428539be8aa12b2627d3a1cb5abf01"
+      "computedHash": "b070f0473d83883235759c6a2a80199022d6948f5cd848241c9a16e26e6bcb12"
     },
     "scourgify": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/scourgify/SKILL.md",
-      "computedHash": "2c859892d33d0a9513a6567614452b77badade3221df20a3d77211eb2b25170f"
+      "computedHash": "5706f72d5913221a2bbda6c187813431314c3e037c0f5d007df3c13477d65d48"
     },
     "scrutinize": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/scrutinize/SKILL.md",
-      "computedHash": "2935979149d232c6614ecc372b1b39741485875f2e98d962d698e0e27e54b319"
+      "computedHash": "cd45bc1d0b7d9564798138378ad18145e60140cc0e3d9d328f34735d18830223"
+    },
+    "serpapi": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/serpapi/SKILL.md",
+      "computedHash": "226efa7b6de1ca822d910be02d8cc7e5ef4ab8c7979e651f25fc3222dfbcd717"
     },
     "speak": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/speak/SKILL.md",
-      "computedHash": "b665a438c0d625656d5e886e09767d7f7768668bf8a4ce50f21d495c3e72cc97"
+      "computedHash": "c7534ff65a02d078317f37543de8471070744301641721e2d227264ee5ae6641"
     },
     "standup": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/standup/SKILL.md",
-      "computedHash": "d418efb614719b357643801d5faf8837460edc10b7165e51b05d666fe52f44c1"
+      "computedHash": "6c72d81b12b974460a493c6f9cc68ca174b4f767a81b949afb985ac974fe4ee2"
     },
     "tailwind": {
       "source": "local-codex-skills",
@@ -305,7 +449,7 @@
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/talk-to/SKILL.md",
-      "computedHash": "89e877ba2a0980c6953cf5e2205f0c9163cb744b34b7959c5869f7269cafb64f"
+      "computedHash": "3befeba786303d184b5c4ec4f2c0a2ed677708c2ef9cea8804ed9c662957d56a"
     },
     "three": {
       "source": "local-codex-skills",
@@ -313,11 +457,17 @@
       "skillPath": "skills/three/SKILL.md",
       "computedHash": "c377a618bc05c0025c3f1003080d30509d7c95336a426573588faceea9e94782"
     },
+    "tmux": {
+      "source": "local-codex-skills",
+      "sourceType": "local",
+      "skillPath": "skills/tmux/SKILL.md",
+      "computedHash": "7141ed1cf5b53a0250c688bd2c1161156dd74fc6fb7830312dcc1be4c7aae16d"
+    },
     "trace": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/trace/SKILL.md",
-      "computedHash": "556d94400cb8d52880912bcc67dcae4ca38db09b1ffd8a95b747e1a95782525a"
+      "computedHash": "0f858ea86e8b56735563a7bae4cb0da0605a651e09333913310cbe0c5816bd8b"
     },
     "typegpu": {
       "source": "local-codex-skills",
@@ -335,7 +485,7 @@
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/watch/SKILL.md",
-      "computedHash": "bb8b3880759c12faa2257115e61334660c597d33d18308d9612a5e49973ffe15"
+      "computedHash": "2766e4e1c4295110f5413d35aeafa44c6b1df97d72d5eb301119d194ff08af64"
     },
     "website-to-hyperframes": {
       "source": "local-codex-skills",
@@ -347,49 +497,25 @@
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/where-we-are/SKILL.md",
-      "computedHash": "b48c1d3447c2f02700506f83495c81f810b044f5b0a31e001b33009979d7a2a7"
+      "computedHash": "0a4df4f69255df1552d6abe5d5358620a30ba7d57ed46fb5988208088d68ed03"
     },
     "who-are-you": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/who-are-you/SKILL.md",
-      "computedHash": "f4c3ce51c4744492f966ab9db8458abf02470c51b45107f130e2d46ad97ead1c"
+      "computedHash": "7758c1f2275bcd6897cbe6890d7b245bee07ed215f53a493489379e41cd1eee9"
     },
     "worktree": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/worktree/SKILL.md",
-      "computedHash": "0f4cd4681f09b7d6504beb804fb033bbeb564816cc5bf890fcf2d64a94441bb7"
+      "computedHash": "f81e3d64c66ee7570c3bf2a665e9e76bb62ff665488bfea8b65ee4de888a3bc2"
     },
     "wrap": {
       "source": "local-codex-skills",
       "sourceType": "local",
       "skillPath": "skills/wrap/SKILL.md",
-      "computedHash": "a7aabbb2191a3501c8db98710fb3bf9deda5a33f7239959512984a85d7fd545e"
-    },
-    "capcut": {
-      "source": "local-codex-skills",
-      "sourceType": "local",
-      "skillPath": "skills/capcut/SKILL.md",
-      "computedHash": "a9f7442ab4eb665212d07377812543ef037dd2bae1b591b1ae3793121b33daae"
-    },
-    "gemlogin-edit": {
-      "source": "local-codex-skills",
-      "sourceType": "local",
-      "skillPath": "skills/gemlogin-edit/SKILL.md",
-      "computedHash": "05de86f98dcc3540b3c19a57527199f92b4afcd1a8dcd517a8ddbba90268154a"
-    },
-    "facebook-ads": {
-      "source": "local-codex-skills",
-      "sourceType": "local",
-      "skillPath": "skills/facebook-ads/SKILL.md",
-      "computedHash": "778064b5867104d2656dcb4c93e0f20a4057279c5596776ebbbc211e8958fd85"
-    },
-    "gemlogin-tiktok": {
-      "source": "local-codex-skills",
-      "sourceType": "local",
-      "skillPath": "skills/gemlogin-tiktok/SKILL.md",
-      "computedHash": "0baf96d60a7ab98d88c7904f2a06854f1c7a542cec7dddcc9c4e915915570416"
+      "computedHash": "d482bbc94555d2c5d011ed69996e5561e8283dc3c73020f1d563657e58e0dd95"
     }
   }
 }

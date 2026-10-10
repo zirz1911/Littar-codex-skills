@@ -1,0 +1,7 @@
+interface:
+  display_name: "GemLogin Browser"
+  short_description: "Operate profiles and capture browser selectors"
+  default_prompt: "Use $gemlogin-browser to open the requested GemLogin profile, perform the browser behavior, and capture verified selectors."
+
+policy:
+  allow_implicit_invocation: true

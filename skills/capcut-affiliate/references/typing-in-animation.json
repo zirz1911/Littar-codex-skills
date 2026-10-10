@@ -1,0 +1,28 @@
+{
+  "source": "Type 1 entrance animation from Ascen Paji 1 text track; clone with a fresh material ID for each target text segment.",
+  "material": {
+    "id": "B4E261B1-5E15-4f56-970C-44F212D0109D",
+    "type": "sticker_animation",
+    "animations": [
+      {
+        "id": "6724920249654710791",
+        "type": "in",
+        "start": 0,
+        "duration": 500000,
+        "path": "${LOCALAPPDATA}/CapCut/User Data/Cache/effect/6724920249654710791/c539514fc398e05a6cf4d7c196f78305",
+        "platform": "all",
+        "resource_id": "6724920249654710791",
+        "third_resource_id": "6724920249654710791",
+        "source_platform": 1,
+        "name": "Type 1",
+        "category_id": "ruchang",
+        "category_name": "text",
+        "panel": "",
+        "material_type": "sticker",
+        "anim_adjust_params": null,
+        "request_id": ""
+      }
+    ],
+    "multi_language_current": "none"
+  }
+}

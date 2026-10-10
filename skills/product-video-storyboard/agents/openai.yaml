@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product Video Storyboard"
+  short_description: "Create 5-shot product storyboards and Flow Omni prompts"
+  default_prompt: "Create a 5-scene product storyboard, Flow Omni prompt, and concise friend-style voiceover from the attached product images and details."

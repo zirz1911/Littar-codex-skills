@@ -1,0 +1,4 @@
+interface:
+  display_name: "GemLogin Facebook"
+  short_description: "Facebook sharing workflows and resilient selectors"
+  default_prompt: "Use $gemlogin-facebook to build or debug a Facebook sharing workflow in GemLogin."

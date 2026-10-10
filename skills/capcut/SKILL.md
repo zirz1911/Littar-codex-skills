@@ -1,4 +1,4 @@
-﻿---
+---
 name: capcut
 description: Edit CapCut desktop draft projects by project name and requested changes. Use when user asks to modify CapCut draft content/timeline directly in local folder C:/Users/pajipan/AppData/Local/CapCut/User Data/Projects/com.lveditor.draft, including trim video, trim silence, duration sync, track/segment edits, media path swaps, and metadata fixes.
 ---
@@ -21,7 +21,7 @@ Edit CapCut draft JSON directly, by project name and user intent.
 ## Workflow
 
 1. Resolve project directory.
-2. Close CapCut before write.
+2. Save the open draft and close CapCut yourself before writing. Use its normal close flow (or `CloseMainWindow()` on the main process), handle any save prompt, and verify all CapCut processes exit; closing the editor may only return to the home window, which must also be closed. Do not ask the user to do routine app opening or closing. Never force-terminate CapCut or edit while a save prompt or process remains; ask only if unsaved work cannot be saved safely.
 3. Backup project files before edit.
 4. Edit root files first:
 - `draft_content.json`
@@ -29,7 +29,7 @@ Edit CapCut draft JSON directly, by project name and user intent.
 - `draft_meta_info.json`
 5. Apply same logical updates to each timeline copy under `Timelines/<id>/` for matching files.
 6. Validate JSON parse for all edited files.
-7. Re-open CapCut and verify timeline duration/material paths/track segments.
+7. Reopen CapCut yourself from its installed executable and verify timeline duration/material paths/track segments. If UI verification is unavailable, state that limit and revalidate the project files after reopening.
 
 ## Fast Commands
 

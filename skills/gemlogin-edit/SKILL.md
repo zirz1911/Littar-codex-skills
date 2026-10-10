@@ -466,6 +466,43 @@ Observed from `[TikTok] Warm-up Feed` in `db.db`.
 - Maintenance rule:
   - after loop surgery, read back both node positions and edge handles, not only node code
 
+## Verified Workflow Pattern: Facebook composer upload and comment
+Observed from `[Facebook] Post and Comment your content` plus live Facebook runtime in GemLogin.
+
+- Facebook often exposes more than one `input[type="file"]` at the same time:
+  - one on the feed card
+  - one inside the active post composer dialog
+- Do not use a broad upload selector like:
+  - `//input[@type='file']`
+  - `(//input[@type='file' and contains(@accept,'image/*')])[last()]`
+- First inspect the active page and separate:
+  - visible wrapper for the `Photo/video` slot inside composer
+  - hidden `input[type='file']` inside the composer form
+- Real runtime issue seen:
+  - GemLogin `Upload File` can fail with `Cannot read properties of null (reading 'x')`
+  - this strongly suggests the block sometimes expects a target with on-screen geometry
+  - hidden file inputs can therefore be worse than the visible wrapper
+- Stable operating pattern for Facebook composer upload:
+  - main path: target the visible `Photo/video` wrapper inside the active dialog
+  - fallback path: target the hidden `input[type='file']` inside the same dialog/form
+- Scope upload selectors to the active composer, not the whole page:
+  - preferred scope shape:
+    - `//div[@role='dialog']//form//...`
+- Comment box selectors on Facebook are also unstable with absolute paths.
+- Prefer semantic selectors:
+  - comment button:
+    - `starts-with(@aria-label,'Comment on ')`
+  - comment textbox:
+    - `@role='textbox'`
+    - `starts-with(@aria-label,'Comment as ')`
+- Submit rule remains the same as TikTok comment flows:
+  - `Presskey Enter` is the main submit source
+  - JS click / JS Enter is fallback only
+- Layout pattern that worked best:
+  - top row: `MAIN PATH`
+  - bottom row: `FALLBACK PATH`
+  - every critical Facebook action gets an explicit fallback edge back into the next main step
+
 ## Editing Guidance From Verified Workflow
 - When user asks what a `conditions` block does:
   - do not read the block alone
@@ -489,9 +526,18 @@ Observed from `[TikTok] Warm-up Feed` in `db.db`.
   - replace `read-file-text` node with one-shot JS loader if graph expects a reader node
   - inspect loop-back edges and skip branches before trusting old router behavior
   - preserve output file params if user still wants append-to-file behavior
+- When patching Facebook upload flows:
+  - inspect all `input[type='file']` nodes on the live page first
+  - confirm whether the target is on the feed or inside the active composer dialog
+  - if GemLogin `Upload File` throws geometry-like errors such as `reading 'x'`, try the visible upload wrapper as main path and keep the hidden input as fallback
+  - avoid page-wide `last()` selectors when both feed and dialog contain upload controls
 - When changing submit logic:
   - trace every incoming and outgoing edge on the affected path
   - remove duplicate submit side effects, not just duplicate selectors
+- When patching Facebook comment flows:
+  - do not trust absolute modal XPaths for the textbox
+  - prefer `role='textbox'` plus `aria-label` selectors
+  - expect composer subtree indexes like `div[4]` / `div[5]` to drift between runs
 - When publish flow can show a confirmation modal:
   - model it as `wait -> detect -> route -> click confirm`
   - keep confirm branch and no-confirm branch explicit in graph
@@ -515,6 +561,15 @@ Observed from `[TikTok] Warm-up Feed` in `db.db`.
   - consistent across main path and fallback path
 - If workflow uses note blocks, update note text so editor reflects new main path and fallback path.
 
+## Fallback and Runtime Maintenance
+
+- In the real drawflow shape, a fallback is usually an outgoing edge with `sourceHandle: "<node-id>-output-fallback"` to a recovery node. Do not invent a `fallbackSelector` field unless a live workflow already uses that schema.
+- For a selector recovery path, keep the main block's selector and add native recovery blocks with labelled edges. A recovery path should finish by re-checking the original condition when the state must be verified, rather than blindly continuing.
+- When a JavaScript block fails while clicking a web UI, move the UI click into an `event-click` block and leave JavaScript responsible for DOM reads and variable assignment. Avoid `document.body.click()` and page-menu `.click()` calls in Facebook flows; they can trigger GemLogin runtime errors such as `Cannot read properties of undefined (reading 'insert')`.
+- When a workflow posts content and then scrapes the new item, insert a native `reload-tab` followed by a wait block before locating the latest item. This prevents stale feed DOM from selecting an older post.
+- For a report link, prefer `file-action` append with `appendMode: "newLine"`; require a resolved permalink or URL variable before writing. Never substitute a profile URL when the requested artifact is a post URL.
+- After every graph patch, verify node/edge references, fallback source handles, both trigger parameter arrays, and the workflow block summary. Back up the database and reload GemLogin before handing the workflow back.
+
 ## Verified Lessons From Latest Wrap
 Source: `D:\Littar-Codex\Kvasir\memory\retrospectives\2026-06\05\09.45_gemlogin_tiktok_workflow_stabilization.md`
 
@@ -531,6 +586,9 @@ Source: `D:\Littar-Codex\Kvasir\memory\retrospectives\2026-06\05\09.45_gemlogin_
 - Treat labeled edges as debugging infrastructure:
   - conditions blocks become faster to explain when branch edges are labeled
   - fallback-heavy graphs become readable without opening every node
+- Treat upload targets as runtime hypotheses:
+  - for sites like Facebook, the correct target may be the visible wrapper, not the hidden input
+  - keep one alternate upload selector in the fallback row instead of trusting one XPath forever
 - Treat trigger inputs as dual-source metadata:
   - missing one copy can create false confidence from DB inspection alone
   - verify parameter visibility from actual workflow listing after reload

@@ -69,6 +69,16 @@ test -f Kvasir/data/pulse/heartbeat.json && cat Kvasir/data/pulse/heartbeat.json
 
 If pulse exists, weave it naturally into the retrospective rather than adding a dashboard.
 
+## Timing Capture
+
+Every retrospective must record the session range; never omit it.
+
+- Use Bangkok time (`GMT+7`) for `Start/End` and `Duration`.
+- Prefer the current assistant session log for the start and wrap invocation time for the end.
+- Use `$wrap --dig` when the timeline has compaction, interruptions, or multiple work periods; use paji-work activity sessions to cross-check gaps.
+- If an exact start cannot be recovered, write `unknown` and mark the source; do not invent a time.
+- Add `Timing Source` so later summaries can distinguish measured from inferred time.
+
 ## Write Memory
 
 Create:
@@ -155,6 +165,7 @@ Mode differences:
 **Session Date**: YYYY-MM-DD
 **Start/End**: HH:MM - HH:MM GMT+7
 **Duration**: ~X min
+**Timing Source**: session log | paji-work collector | inferred
 **Focus**: [description]
 **Type**: [Feature | Bug Fix | Research | Refactoring | Skill Ops]
 

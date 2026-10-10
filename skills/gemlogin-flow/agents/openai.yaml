@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gemlogin Flow"
+  short_description: "Operate Google Flow through GemLogin profiles"
+  default_prompt: "Use $gemlogin-flow for labs.google/fx Flow pages: collect XPath selectors, generate images, wait for media changes, and wire Flow actions into GemLogin workflows."
